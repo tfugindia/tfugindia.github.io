@@ -1,69 +1,101 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
     <title>
-      {% if page.title %}
-      {{ page.title | escape }}
-      {% else %}
-      {{ site.title | escape }}
-      {% endif %}
+      {% if page.title %} {{ page.title | escape }} {% else %} {{ site.title |
+      escape }} {% endif %}
     </title>
-    <link rel="shortcut icon" type="image/x-icon" href="{{site.baseurl}}/assets/res/favicon.ico">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
-    <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/main.css">
-    {% for css in layout.css %}
-    {% if css contains "//" %}
-    <link rel="stylesheet" href="{{css}}">
+
+    <!-- Lato Font -->
+    <link
+      href="http://fonts.googleapis.com/css?family=Lato:300,400,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- Stylesheet -->
+    <link href="assets/css/gallery-materialize.min.css" rel="stylesheet" />
+
+    <!-- Material Icons -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    {% for css in layout.css %} {% if css contains "//" %}
+    <link rel="stylesheet" href="{{css}}" />
     {% else %}
-    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/{{css}}">
-    {% endif %}
-    {% endfor %}
-    {% for css in page.css %}
-    {% if css contains "//" %}
-    <link rel="stylesheet" href="{{css}}">
+    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/{{css}}" />
+    {% endif %} {% endfor %} {% for css in page.css %} {% if css contains "//"
+    %}
+    <link rel="stylesheet" href="{{css}}" />
     {% else %}
-    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/{{css}}">
-    {% endif %}
-    {% endfor %}
-    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/syntax.css">
-    <link rel="alternate" type="application/rss+xml" title="RSS" href="{{site.baseurl}}/feed.xml">
-    <link rel="sitemap" type="application/xml" title="Sitemap" href="{{site.baseurl}}/sitemap.xml">
-    {% seo title=false %}
+    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/{{css}}" />
+    {% endif %} {% endfor %}
+
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="RSS"
+      href="{{site.baseurl}}/feed.xml"
+    />
+    <link
+      rel="sitemap"
+      type="application/xml"
+      title="Sitemap"
+      href="{{site.baseurl}}/sitemap.xml"
+    />
   </head>
-  <body>
-    <header>
-      <nav class="top-nav orange">
-        <div class="nav-wrapper">
-          <div class="container">
-            <a class="page-title" href="{{site.baseurl}}/">{{site.title}}</a>
-          </div>
-        </div>
-      </nav>
-      <div class="container">
-        <a href="#" data-activates="slide-out" class="button-collapse top-nav full hide-on-large-only">
-          <i class="material-icons">menu</i>
-        </a>
+
+  <body class="blog">
+    <!-- Navbar and Header -->
+    <nav class="nav-extended orange">
+      <div class="nav-background">
+        <div
+          class="pattern active"
+          style="background-image: url('http://placehold.it/1400x300');"
+        ></div>
       </div>
-      <ul id="slide-out" class="side-nav fixed">
-        <li>
-          <div class="userView">
-            <div class="background"></div>
-            <a href="{{site.github_profile}}" target="_blank"><img class="circle z-depth-2" src="{{site.baseurl}}/assets/res/user.png"></a>
-            <span class="white-text name">{{site.user}}</span>
-            <span class="white-text email">{{site.user_email}}</span>
-          </div>
-        </li>
-        <li><a class="waves-effect" href="{{site.baseurl}}/"><i class="material-icons">home</i>Home</a></li>
-        <li><a class="waves-effect" href="{{site.baseurl}}/projects"><i class="material-icons">description</i>Projects</a></li>
-        <li><a class="waves-effect" href="{{site.baseurl}}/categories"><i class="material-icons">sort</i>Categories</a></li>
-        <!-- <li><a class="waves-effect" href="{{site.baseurl}}/tags"><i class="material-icons">label</i>Tags</a></li> -->
-        <!-- <li><a class="waves-effect" href="{{site.baseurl}}/feed.xml" target="_blank"><i class="material-icons">rss_feed</i>RSS</a></li> -->
-        <li><div class="divider"></div></li>
-        <li><a class="waves-effect" href="{{site.baseurl}}/about"><i class="material-icons">person</i>About</a></li>
-        <li><a class="waves-effect" href="{{site.baseurl}}/contact"><i class="material-icons">email</i>Contact</a></li>
-      </ul>
-    </header>
-    <main>
+      <div class="nav-wrapper container">
+        <a href="/" class="brand-logo"
+          ><i class="material-icons">camera</i>TFUG India</a
+        >
+        <a href="#" data-target="nav-mobile" class="sidenav-trigger"
+          ><i class="material-icons">menu</i></a
+        >
+        <ul class="right hide-on-med-and-down">
+          <li class="active"><a href="/">Home</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+        <div class="nav-header center">
+          <h1>TFUG India Projects</h1>
+          <div class="tagline">Bringing the best from India!</div>
+        </div>
+      </div>
+
+      <!-- Fixed Masonry Filters
+      <div class="categories-wrapper orange darken-1">
+        <div class="categories-container">
+          <ul class="categories container">
+            <li class="active"><a href="#all">All</a></li>
+            <li><a href="#overhead">Overhead</a></li>
+            <li><a href="#sintel">Sintel</a></li>
+          </ul>
+        </div>
+      </div> -->
+    </nav>
+    <ul class="sidenav" id="nav-mobile">
+      <li class="active">
+        <a href="/"><i class="material-icons">camera</i>Home</a>
+      </li>
+      <li>
+        <a href="#"><i class="material-icons">camera</i>Blog</a>
+      </li>
+    </ul>
+  </body>
+</html>

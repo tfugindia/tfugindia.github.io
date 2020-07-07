@@ -1,5 +1,4 @@
-    </main>
-    <footer class="page-footer teal">
+<footer class="page-footer grey">
       <div class="container">
         <div class="row">
           <div class="col s12">
@@ -10,13 +9,20 @@
       </div>
       <div class="footer-copyright">
         <div class="container">
-          &#xA9; {{"now" | date: "%Y"}} {{site.title}}. All rights reserved. Powered by <a href="https://github.com/ShawnTeoh/matjek">MatJek</a>.
+          &#xA9; {{"now" | date: "%Y"}} {{site.title}}. All rights reserved.
         </div>
       </div>
     </footer>
-    <script src="//code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
-    {% for js in layout.js %}
+     <!-- Core Javascript -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+     <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+     <script src="assets/js/masonry.pkgd.min.js"></script>
+     <script src="assets/js/materialize.min.js"></script>
+     <script src="assets/js/color-thief.min.js"></script>
+     <script src="assets/js/galleryExpand.js"></script>
+     <script src="assets/js/init.js"></script>
+
+     {% for js in layout.js %}
     {% if js contains "//" %}
     <script src="{{js}}"></script>
     {% else %}
@@ -38,6 +44,9 @@
       ga('send', 'pageview');
     </script>
     {% endif %}
-    <script src="{{site.baseurl}}/assets/js/main.js"></script>
+ 
+   </body>
+ </html>
+ 
   </body>
 </html>

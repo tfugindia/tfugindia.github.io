@@ -73,8 +73,8 @@
           ><i class="material-icons">menu</i></a
         >
         <ul class="right hide-on-med-and-down">
-          <li {% if page.url == "/" %} class="active" {% endif %}><a href="/">Home</a></li>
-          <li {% if page.url == "/about" %} class="active" {% endif %}><a href="/about">About</a></li>
+          <li {% if page.url == "/" %} class="active" {% endif %}  style="list-style-type: none !important;"><a href="/">Home</a></li>
+          <li {% if page.url == "/about" %} class="active" {% endif %} style="list-style-type: none !important;"><a href="/about">About</a></li>
         </ul>
       </div>
 
@@ -89,12 +89,12 @@
         </div>
       </div> -->
     </nav>
-    <ul class="sidenav" id="nav-mobile">
-      <li {% if page.url == "/" %} class="active" {% endif %}>
-        <a href="/"><i class="material-icons">camera</i>Home</a>
+    <ul class="sidenav" id="nav-mobile" style="list-style-type: none !important; padding-left: 0 !important;">
+      <li {% if page.url == "/" %} class="active" {% endif %} style="list-style-type: none !important; padding-left: 2rem;">
+        <a href="/">Home</a>
       </li>
-      <li {% if page.url == "/about" %} class="active" {% endif %}>
-        <a href="/about"><i class="material-icons">camera</i>About</a>
+      <li {% if page.url == "/about" %} class="active" {% endif %} style="list-style-type: none !important;  padding-left: 2rem;">
+        <a href="/about">About</a>
       </li>
     </ul>
   </body>

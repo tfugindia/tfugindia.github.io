@@ -4,10 +4,6 @@ title:  TFUG Project Showcase
 date:   2017-03-23 01:30:13 +0800
 ---
 
-#### TFUG Project Showcase 
-
-Agenda: Organise an event that'll showcase projects made by the community.
-
 ##### Flow:
 
   - Being a member of the TFUG Telegram Groups is a must. If you have not joined already please do so:

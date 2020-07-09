@@ -22,6 +22,8 @@ permalink: /:title
 repository: tfugindia/tfugindia.github.io
 paginate: 5
 
+highlighter: pygments
+
 # MatJek specific configurations
 github_profile: "https://github.com/tfugindia"
 user: "TF India"

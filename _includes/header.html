@@ -12,25 +12,16 @@
     </title>
 
     <!-- Stylesheet -->
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="/assets/css/gallery-materialize.min.css" rel="stylesheet" />
+    <link href="/assets/css/zenburn.css" rel="stylesheet" />
 
     <!-- Material Icons -->
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
-
-    {% for css in layout.css %} {% if css contains "//" %}
-    <link rel="stylesheet" href="{{css}}" />
-    {% else %}
-    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/{{css}}" />
-    {% endif %} {% endfor %} {% for css in page.css %} {% if css contains "//"
-    %}
-    <link rel="stylesheet" href="{{css}}" />
-    {% else %}
-    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/{{css}}" />
-    {% endif %} {% endfor %}
-
     <style>
       @font-face {
         font-family: GoogleSans;
@@ -67,8 +58,8 @@
           ><i class="material-icons">menu</i></a
         >
         <ul class="right hide-on-med-and-down">
-          <li class="active"><a href="/">Home</a></li>
-          <li><a href="/about">About</a></li>
+          <li {% if page.url == "/" %} class="active" {% endif %}><a href="/">Home</a></li>
+          <li {% if page.url == "/about" %} class="active" {% endif %}><a href="/about">About</a></li>
         </ul>
       </div>
 
@@ -84,10 +75,10 @@
       </div> -->
     </nav>
     <ul class="sidenav" id="nav-mobile">
-      <li class="active">
+      <li {% if page.url == "/" %} class="active" {% endif %}>
         <a href="/"><i class="material-icons">camera</i>Home</a>
       </li>
-      <li>
+      <li {% if page.url == "/about" %} class="active" {% endif %}>
         <a href="/about"><i class="material-icons">camera</i>About</a>
       </li>
     </ul>

@@ -3,7 +3,6 @@ layout: post
 title:  "Syntax Highlighting Test"
 date:   2017-03-24 01:30:13 +0800
 categories: default
-tags: test syntax
 ---
 Jekyll uses Rouge by default for syntax highlighting, here are some tests.
 
@@ -17,7 +16,7 @@ print_hi('Tom')
 {% endhighlight %}
 
 Python with line numbers:
-{% highlight python linenos %}
+{% highlight python %}
 def print_hi(name):
     print("Hi, {}".format(name))
 
@@ -26,7 +25,7 @@ print_hi('Tom')
 {% endhighlight %}
 
 C with line numbers:
-{% highlight c linenos %}
+{% highlight c %}
 void print_hi(string name) {
   printf("Hi, %s", name);
 }

@@ -5,40 +5,39 @@ css: ["index.css"]
 <div id="portfolio" class="section gray">
   <div class="container">
     <div class="gallery row">
+      {% for post in paginator.posts %}
+
       <div
         class="col l4 m6 s12 gallery-item gallery-expand gallery-filter overhead"
       >
         <div class="gallery-curve-wrapper">
           <a class="gallery-cover gray" style="height: 300px;">
-            <img src="http://placehold.it/1280x500" alt="placeholder" />
+            <img src="https://picsum.photos/200/300" alt="placeholder" />
           </a>
           <div class="gallery-header">
-            <span>Workspace</span>
+            <span>{{post.title}}
+              <!-- <p id="post-date">
+                <i class="material-icons">date_range</i>
+                {{post.date | date: "%d/%m/%Y %H:%M"}}
+              </p> -->
+            </span>
           </div>
           <div class="gallery-body">
             <div class="title-wrapper">
-              <h3>Grapefruit</h3>
+              <h3>{{post.title}}</h3>
+              <p id="post-date">
+                <i class="material-icons">date_range</i>
+                {{post.date | date: "%d/%m/%Y %H:%M"}}
+              </p>
             </div>
             <p class="description">
-              Literally venmo before they sold out, DIY heirloom forage polaroid
-              offal yr pop-up selfies health goth. Typewriter scenester hammock
-              truffaut meditation, squid before they sold out polaroid portland
-              tousled taxidermy vice. Listicle butcher thundercats, taxidermy
-              pitchfork next level roof party crucifix narwhal kinfolk you
-              probably haven't heard of them portland small batch.
+              {{post.excerpt | remove: '<p>' | remove: '</p>'}}
             </p>
-            <p class="description">
-              Ea salvia adipisicing vegan man bun. Flexitarian cupidatat
-              skateboard flannel. Drinking vinegar marfa you probably haven't
-              heard of them consequat post-ironic, shabby chic williamsburg
-              raclette vaporware readymade selfies brunch. Venmo selvage
-              biodiesel marfa. Tbh literally 3 wolf moon, proident elit raclette
-              chambray consequat edison bulb four loko accusamus. Semiotics
-              godard eiusmod, ex esse air plant quinoa vaporware selfies keytar.
-              Actually yuccie ennui flannel single-origin coffee, williamsburg
-              cardigan banjo forage pug distillery tumblr hexagon vinyl
-              occaecat.
-            </p>
+            <div class="card-action">
+              <a href="{{post.url | prepend: site.baseurl}}">
+                Read More
+              </a>
+            </div>
           </div>
           <div class="gallery-action">
             <a class="btn-floating btn-large waves-effect waves-light"
@@ -47,300 +46,7 @@ css: ["index.css"]
           </div>
         </div>
       </div>
-      <div
-        class="col l4 m6 s12 gallery-item gallery-expand gallery-filter overhead"
-      >
-        <div class="gallery-curve-wrapper">
-          <a class="gallery-cover gray" style="height: 400px;">
-            <img src="http://placehold.it/1280x400" alt="placeholder" />
-          </a>
-          <div class="gallery-header">
-            <span>Studio</span>
-          </div>
-          <div class="gallery-body">
-            <div class="title-wrapper">
-              <h3>Grapefruit</h3>
-            </div>
-            <p class="description">
-              Literally venmo before they sold out, DIY heirloom forage polaroid
-              offal yr pop-up selfies health goth. Typewriter scenester hammock
-              truffaut meditation, squid before they sold out polaroid portland
-              tousled taxidermy vice. Listicle butcher thundercats, taxidermy
-              pitchfork next level roof party crucifix narwhal kinfolk you
-              probably haven't heard of them portland small batch.
-            </p>
-            <p class="description">
-              Ea salvia adipisicing vegan man bun. Flexitarian cupidatat
-              skateboard flannel. Drinking vinegar marfa you probably haven't
-              heard of them consequat post-ironic, shabby chic williamsburg
-              raclette vaporware readymade selfies brunch. Venmo selvage
-              biodiesel marfa. Tbh literally 3 wolf moon, proident elit raclette
-              chambray consequat edison bulb four loko accusamus. Semiotics
-              godard eiusmod, ex esse air plant quinoa vaporware selfies keytar.
-              Actually yuccie ennui flannel single-origin coffee, williamsburg
-              cardigan banjo forage pug distillery tumblr hexagon vinyl
-              occaecat.
-            </p>
-          </div>
-          <div class="gallery-action">
-            <a class="btn-floating btn-large waves-effect waves-light"
-              ><i class="material-icons">favorite</i></a
-            >
-          </div>
-        </div>
-      </div>
-      <div
-        class="col l4 m6 s12 gallery-item gallery-expand gallery-filter sintel"
-      >
-        <div class="gallery-curve-wrapper">
-          <a class="gallery-cover gray" style="height: 300px;">
-            <img src="http://placehold.it/1280x500" alt="placeholder" />
-          </a>
-          <div class="gallery-header">
-            <span>Bamboo</span>
-          </div>
-          <div class="gallery-body">
-            <div class="title-wrapper">
-              <h3>Grapefruit</h3>
-            </div>
-            <p class="description">
-              Literally venmo before they sold out, DIY heirloom forage polaroid
-              offal yr pop-up selfies health goth. Typewriter scenester hammock
-              truffaut meditation, squid before they sold out polaroid portland
-              tousled taxidermy vice. Listicle butcher thundercats, taxidermy
-              pitchfork next level roof party crucifix narwhal kinfolk you
-              probably haven't heard of them portland small batch.
-            </p>
-            <p class="description">
-              Ea salvia adipisicing vegan man bun. Flexitarian cupidatat
-              skateboard flannel. Drinking vinegar marfa you probably haven't
-              heard of them consequat post-ironic, shabby chic williamsburg
-              raclette vaporware readymade selfies brunch. Venmo selvage
-              biodiesel marfa. Tbh literally 3 wolf moon, proident elit raclette
-              chambray consequat edison bulb four loko accusamus. Semiotics
-              godard eiusmod, ex esse air plant quinoa vaporware selfies keytar.
-              Actually yuccie ennui flannel single-origin coffee, williamsburg
-              cardigan banjo forage pug distillery tumblr hexagon vinyl
-              occaecat.
-            </p>
-          </div>
-          <div class="gallery-action">
-            <a class="btn-floating btn-large waves-effect waves-light"
-              ><i class="material-icons">favorite</i></a
-            >
-          </div>
-        </div>
-      </div>
-      <div
-        class="col l4 m6 s12 gallery-item gallery-expand gallery-filter sintel"
-      >
-        <div class="gallery-curve-wrapper">
-          <a class="gallery-cover gray" style="height: 300px;">
-            <img src="http://placehold.it/1280x500" alt="placeholder" />
-          </a>
-          <div class="gallery-header">
-            <span>Bedroom</span>
-          </div>
-          <div class="gallery-body">
-            <div class="title-wrapper">
-              <h3>Grapefruit</h3>
-            </div>
-            <p class="description">
-              Literally venmo before they sold out, DIY heirloom forage polaroid
-              offal yr pop-up selfies health goth. Typewriter scenester hammock
-              truffaut meditation, squid before they sold out polaroid portland
-              tousled taxidermy vice. Listicle butcher thundercats, taxidermy
-              pitchfork next level roof party crucifix narwhal kinfolk you
-              probably haven't heard of them portland small batch.
-            </p>
-            <p class="description">
-              Ea salvia adipisicing vegan man bun. Flexitarian cupidatat
-              skateboard flannel. Drinking vinegar marfa you probably haven't
-              heard of them consequat post-ironic, shabby chic williamsburg
-              raclette vaporware readymade selfies brunch. Venmo selvage
-              biodiesel marfa. Tbh literally 3 wolf moon, proident elit raclette
-              chambray consequat edison bulb four loko accusamus. Semiotics
-              godard eiusmod, ex esse air plant quinoa vaporware selfies keytar.
-              Actually yuccie ennui flannel single-origin coffee, williamsburg
-              cardigan banjo forage pug distillery tumblr hexagon vinyl
-              occaecat.
-            </p>
-          </div>
-          <div class="gallery-action">
-            <a class="btn-floating btn-large waves-effect waves-light"
-              ><i class="material-icons">favorite</i></a
-            >
-          </div>
-        </div>
-      </div>
-      <div
-        class="col l4 m6 s12 gallery-item gallery-expand gallery-filter overhead"
-      >
-        <div class="gallery-curve-wrapper">
-          <a class="gallery-cover gray" style="height: 350px;">
-            <img src="http://placehold.it/1280x500" alt="placeholder" />
-          </a>
-          <div class="gallery-header">
-            <span>Workshop</span>
-          </div>
-          <div class="gallery-body">
-            <div class="title-wrapper">
-              <h3>Grapefruit</h3>
-            </div>
-            <p class="description">
-              Literally venmo before they sold out, DIY heirloom forage polaroid
-              offal yr pop-up selfies health goth. Typewriter scenester hammock
-              truffaut meditation, squid before they sold out polaroid portland
-              tousled taxidermy vice. Listicle butcher thundercats, taxidermy
-              pitchfork next level roof party crucifix narwhal kinfolk you
-              probably haven't heard of them portland small batch.
-            </p>
-            <p class="description">
-              Ea salvia adipisicing vegan man bun. Flexitarian cupidatat
-              skateboard flannel. Drinking vinegar marfa you probably haven't
-              heard of them consequat post-ironic, shabby chic williamsburg
-              raclette vaporware readymade selfies brunch. Venmo selvage
-              biodiesel marfa. Tbh literally 3 wolf moon, proident elit raclette
-              chambray consequat edison bulb four loko accusamus. Semiotics
-              godard eiusmod, ex esse air plant quinoa vaporware selfies keytar.
-              Actually yuccie ennui flannel single-origin coffee, williamsburg
-              cardigan banjo forage pug distillery tumblr hexagon vinyl
-              occaecat.
-            </p>
-          </div>
-          <div class="gallery-action">
-            <a class="btn-floating btn-large waves-effect waves-light"
-              ><i class="material-icons">favorite</i></a
-            >
-          </div>
-        </div>
-      </div>
-      <div
-        class="col l4 m6 s12 gallery-item gallery-expand gallery-filter overhead"
-      >
-        <div class="gallery-curve-wrapper">
-          <a class="gallery-cover gray" style="height: 400px;">
-            <img src="http://placehold.it/1280x500" alt="placeholder" />
-          </a>
-          <div class="gallery-header">
-            <span>Kitchen</span>
-          </div>
-          <div class="gallery-body">
-            <div class="title-wrapper">
-              <h3>Grapefruit</h3>
-            </div>
-            <p class="description">
-              Literally venmo before they sold out, DIY heirloom forage polaroid
-              offal yr pop-up selfies health goth. Typewriter scenester hammock
-              truffaut meditation, squid before they sold out polaroid portland
-              tousled taxidermy vice. Listicle butcher thundercats, taxidermy
-              pitchfork next level roof party crucifix narwhal kinfolk you
-              probably haven't heard of them portland small batch.
-            </p>
-            <p class="description">
-              Ea salvia adipisicing vegan man bun. Flexitarian cupidatat
-              skateboard flannel. Drinking vinegar marfa you probably haven't
-              heard of them consequat post-ironic, shabby chic williamsburg
-              raclette vaporware readymade selfies brunch. Venmo selvage
-              biodiesel marfa. Tbh literally 3 wolf moon, proident elit raclette
-              chambray consequat edison bulb four loko accusamus. Semiotics
-              godard eiusmod, ex esse air plant quinoa vaporware selfies keytar.
-              Actually yuccie ennui flannel single-origin coffee, williamsburg
-              cardigan banjo forage pug distillery tumblr hexagon vinyl
-              occaecat.
-            </p>
-          </div>
-          <div class="gallery-action">
-            <a class="btn-floating btn-large waves-effect waves-light"
-              ><i class="material-icons">favorite</i></a
-            >
-          </div>
-        </div>
-      </div>
-      <div
-        class="col l4 m6 s12 gallery-item gallery-expand gallery-filter sintel"
-      >
-        <div class="gallery-curve-wrapper">
-          <a class="gallery-cover gray" style="height: 300px;">
-            <img src="http://placehold.it/1280x500" alt="placeholder" />
-          </a>
-          <div class="gallery-header">
-            <span>Snowscape</span>
-          </div>
-          <div class="gallery-body">
-            <div class="title-wrapper">
-              <h3>Grapefruit</h3>
-            </div>
-            <p class="description">
-              Literally venmo before they sold out, DIY heirloom forage polaroid
-              offal yr pop-up selfies health goth. Typewriter scenester hammock
-              truffaut meditation, squid before they sold out polaroid portland
-              tousled taxidermy vice. Listicle butcher thundercats, taxidermy
-              pitchfork next level roof party crucifix narwhal kinfolk you
-              probably haven't heard of them portland small batch.
-            </p>
-            <p class="description">
-              Ea salvia adipisicing vegan man bun. Flexitarian cupidatat
-              skateboard flannel. Drinking vinegar marfa you probably haven't
-              heard of them consequat post-ironic, shabby chic williamsburg
-              raclette vaporware readymade selfies brunch. Venmo selvage
-              biodiesel marfa. Tbh literally 3 wolf moon, proident elit raclette
-              chambray consequat edison bulb four loko accusamus. Semiotics
-              godard eiusmod, ex esse air plant quinoa vaporware selfies keytar.
-              Actually yuccie ennui flannel single-origin coffee, williamsburg
-              cardigan banjo forage pug distillery tumblr hexagon vinyl
-              occaecat.
-            </p>
-          </div>
-          <div class="gallery-action">
-            <a class="btn-floating btn-large waves-effect waves-light"
-              ><i class="material-icons">favorite</i></a
-            >
-          </div>
-        </div>
-      </div>
-      <div
-        class="col l4 m6 s12 gallery-item gallery-expand gallery-filter overhead"
-      >
-        <div class="gallery-curve-wrapper">
-          <a class="gallery-cover gray" style="height: 250px;">
-            <img src="http://placehold.it/1280x500" alt="placeholder" />
-          </a>
-          <div class="gallery-header">
-            <span>Countertop</span>
-          </div>
-          <div class="gallery-body">
-            <div class="title-wrapper">
-              <h3>Grapefruit</h3>
-            </div>
-            <p class="description">
-              Literally venmo before they sold out, DIY heirloom forage polaroid
-              offal yr pop-up selfies health goth. Typewriter scenester hammock
-              truffaut meditation, squid before they sold out polaroid portland
-              tousled taxidermy vice. Listicle butcher thundercats, taxidermy
-              pitchfork next level roof party crucifix narwhal kinfolk you
-              probably haven't heard of them portland small batch.
-            </p>
-            <p class="description">
-              Ea salvia adipisicing vegan man bun. Flexitarian cupidatat
-              skateboard flannel. Drinking vinegar marfa you probably haven't
-              heard of them consequat post-ironic, shabby chic williamsburg
-              raclette vaporware readymade selfies brunch. Venmo selvage
-              biodiesel marfa. Tbh literally 3 wolf moon, proident elit raclette
-              chambray consequat edison bulb four loko accusamus. Semiotics
-              godard eiusmod, ex esse air plant quinoa vaporware selfies keytar.
-              Actually yuccie ennui flannel single-origin coffee, williamsburg
-              cardigan banjo forage pug distillery tumblr hexagon vinyl
-              occaecat.
-            </p>
-          </div>
-          <div class="gallery-action">
-            <a class="btn-floating btn-large waves-effect waves-light"
-              ><i class="material-icons">favorite</i></a
-            >
-          </div>
-        </div>
-      </div>
+  {% endfor %}
     </div>
   </div>
 </div>

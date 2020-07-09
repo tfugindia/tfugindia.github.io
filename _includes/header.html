@@ -11,13 +11,6 @@
       escape }} {% endif %}
     </title>
 
-    <!-- Lato Font -->
-    <link
-      href="http://fonts.googleapis.com/css?family=Lato:300,400,700"
-      rel="stylesheet"
-      type="text/css"
-    />
-
     <!-- Stylesheet -->
     <link href="assets/css/gallery-materialize.min.css" rel="stylesheet" />
 
@@ -37,6 +30,17 @@
     {% else %}
     <link rel="stylesheet" href="{{site.baseurl}}/assets/css/{{css}}" />
     {% endif %} {% endfor %}
+
+    <style>
+      @font-face {
+        font-family: GoogleSans;
+        src: url(/assets/res/google-font.woff2);
+      }
+
+      * {
+        font-family: GoogleSans;
+      }
+    </style>
 
     <link
       rel="alternate"
@@ -58,12 +62,12 @@
       <div class="nav-background">
         <div
           class="pattern active"
-          style="background-image: url('http://placehold.it/1400x300');"
+          style="background-image: url('https://picsum.photos/1400/300');"
         ></div>
       </div>
       <div class="nav-wrapper container">
         <a href="/" class="brand-logo"
-          ><i class="material-icons">camera</i>TFUG India</a
+          >TFUG India</a
         >
         <a href="#" data-target="nav-mobile" class="sidenav-trigger"
           ><i class="material-icons">menu</i></a
@@ -73,8 +77,8 @@
           <li><a href="#">Blog</a></li>
         </ul>
         <div class="nav-header center">
-          <h1>TFUG India Projects</h1>
-          <div class="tagline">Bringing the best from India!</div>
+          <h1>India Project Showcase</h1>
+          <div class="tagline" style="font-size: larger;">Bringing the best from India!</div>
         </div>
       </div>
 
